@@ -25,7 +25,13 @@
             function colorBack () {
                 noGoButton.style.backgroundColor = "";
             }
-            noGoButton.addEventListener("click", goBackToEarth);
+            function areYouSureWindow () {
+                let response = window.confirm("Are you sure you want to abort the mission?");
+                if (response) {
+                    goBackToEarth();
+                }
+            }
+            noGoButton.addEventListener("click", areYouSureWindow);
             noGoButton.addEventListener("mouseover", colorToRed);
             noGoButton.addEventListener("mouseout", colorBack);
             goButton.addEventListener("click", goHoustonGo);
