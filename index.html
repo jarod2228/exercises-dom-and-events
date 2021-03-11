@@ -3,8 +3,15 @@
     <head>
         <title>Flight Simulator</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        <script src = "script.js">
-            function changeText(param) {
+        <script src = "script.js"></script>
+    </head>
+    <body>
+        <h1>Flight Simulator</h1>
+        <p id="statusReport">The shuttle is on the ground</p>
+        <button id = "liftoffButton">Take off</button>
+        <button id = "abortMission">Abort mission</button>
+        <script>
+             function changeText(param) {
                 if (param === "liftoffButton") {
                     document.getElementById("statusReport").innerHTML = "Houston, we have liftoff!";
                 }
@@ -12,13 +19,9 @@
                     document.getElementById("statusReport").innerHTML = "Mission aborted! Space shuttle returning home."
                 }
             }
+            let goButton = document.getElementById("liftoffButton");
+            goButton.addEventListener("click", changeText);
         </script>
-    </head>
-    <body>
-        <h1>Flight Simulator</h1>
-        <p id="statusReport">The shuttle is on the ground</p>
-        <button id = "liftoffButton">Take off</button>
-        <button id = "abortMission">Abort mission</button>
     </body>
 </html>
 
