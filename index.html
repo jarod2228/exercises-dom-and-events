@@ -11,23 +11,21 @@
         <button id = "liftoffButton">Take off</button>
         <button id = "abortMission">Abort mission</button>
         <script>
-             function changeText(param) {
-                if (param === "liftoffButton") {
-                    document.getElementById("statusReport").innerHTML = "Houston, we have liftoff!";
-                }
-                if (param === "abortMission") {
-                    document.getElementById("statusReport").innerHTML = "Mission aborted! Space shuttle returning home."
-                }
+            function goHoustonGo () {
+                document.getElementById("statusReport").innerHTML = "Houston, we have liftoff!";
+            }
+            function goBackToEarth () {
+                document.getElementById("statusReport").innerHTML = "Mission aborted! Space shuttle returning home."
             }
             let goButton = document.getElementById("liftoffButton");
-            goButton.addEventListener("click", changeText);
+            goButton.addEventListener("click", goHoustonGo);
+            let noGoButton = document.getElementById("abortMission");
+            noGoButton.addEventListener("click", goBackToEarth);
         </script>
     </body>
 </html>
 
-<!-- 1. When the Take off button is clicked, the text The shuttle is on the 
-ground changes to Houston, we have liftoff!. The Take off button has
-an id="liftoffButton" attribute.
+<!-- 
 2. When the user's cursor goes over the Abort Mission button, the button's
 background turns red. The Abort Mission button has id="abortMission".
 3. When the user's cursor leaves the Abort Mission button, the button's 
@@ -37,4 +35,9 @@ browser styles.)
 4. When the user clicks the Abort Mission button, make a confirmation 
 window that says Are you sure you want to abort the mission?. If the 
 user confirms that they want to abort, the text changes to Mission 
-aborted! Space shuttle returning home. -->
+aborted! Space shuttle returning home. 
+
+1. When the Take off button is clicked, the text The shuttle is on the 
+ground changes to Houston, we have liftoff!. The Take off button has
+an id="liftoffButton" attribute.
+-->
